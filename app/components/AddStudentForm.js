@@ -5,7 +5,6 @@ export default function AddStudentForm(props){
 
     return(
         <div>
-            
             ADD A NEW STUDENT 
         <form >
             <div>
@@ -29,4 +28,6 @@ export default function AddStudentForm(props){
         </div>
     )
 }
+
+
 
