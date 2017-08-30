@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {fetchCampus} from '../reducers/currentCampus'
+import AllStudents from './AllStudents'
 import axios from 'axios';
 
  class SingleCampus extends Component {
@@ -26,11 +27,8 @@ import axios from 'axios';
                 
                 <img src = {currentCampus.image} width = {150} height = {150}/>
                 <h4><span>{currentCampus.name} {currentCampus.id}</span></h4>
+                <AllStudents/>
             </div>
-            // <div className = "campus">
-            //     <h3> {campus.name} </h3>
-            //     <img src ={campus.image} className = "img-thumbnail" />
-            // </div>
         )
     }
 

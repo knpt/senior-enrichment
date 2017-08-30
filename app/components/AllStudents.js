@@ -16,15 +16,23 @@ class AllStudents extends Component {
         return (
             <div className = "container">
                 <h3> STUDENTS </h3>
+                <ul>
                 {
                     students.map(student=> {
                         return (
                             <div key = {student.id}> 
-                                {student.name}
+                            <li>
+                              <p>
+                              <Link className = "studentlink" to={`/students/${student.id}`}>
+                                <span> {student.name} | Campus ID: {student.campusId} </span>
+                              </Link> 
+                              </p>
+                            </li>
                             </div>
                         )
                     })
                 }
+                </ul>   
             </div>
         )
     }
