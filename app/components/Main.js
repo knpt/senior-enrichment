@@ -31,7 +31,9 @@ export default class Main extends Component {
                     
                 </Switch>
                 </main>
+                <div>
                 <AddStudentForm/>
+                </div>
             </div>
             
         )

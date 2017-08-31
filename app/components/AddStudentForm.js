@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default function AddStudentForm(props){
+function AddStudentForm(props){
 
     return(
-        <div>
-            ADD A NEW STUDENT 
+        <div className = "container">
+            <h3> ADD A NEW STUDENT </h3>
         <form >
-            <div>
+            <div className = "form-group">
             <label htmlFor="name"> Name: </label>
             <input 
                 type="text"
@@ -31,3 +31,5 @@ export default function AddStudentForm(props){
 
 
 
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddStudentForm)

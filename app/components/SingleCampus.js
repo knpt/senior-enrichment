@@ -30,11 +30,11 @@ import axios from 'axios';
 
        console.log("IM THIS.PROPS" , this.props)
         return(
-            <div>
-                <h3> MY SINGLE CAMPUS BY ID </h3>
+            <div className = "container">
                 
+                <h1><span id= "campusname" >{currentCampus.name} {currentCampus.id}</span></h1>
                 <img src = {currentCampus.image} width = {150} height = {150}/>
-                <h4><span>{currentCampus.name} {currentCampus.id}</span></h4>
+                
                 <Students students = {filteredStudents}/>
             </div>
         )
