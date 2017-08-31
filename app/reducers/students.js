@@ -2,11 +2,17 @@ import axios from 'axios';
 
 //ACTION TYPE
 const GET_STUDENTS = "GET_STUDENTS";
+const POST_STUDENT = "POST_STUDENT"
 
 
 //ACTION CREATORS
 export function getStudents(students){
     const action = {type: GET_STUDENTS, students};
+    return action
+}
+
+export function postStudent(student){
+    const action = {type: POST_STUDENT, student}
     return action
 }
 
@@ -22,6 +28,7 @@ export function fetchStudents(){
     }
 }
 
+
 //REDUCER
 
 export default function reducer(students = [], action){
@@ -31,6 +38,9 @@ export default function reducer(students = [], action){
         case GET_STUDENTS:
             return action.students;
         
+        case POST_STUDENT: 
+            return [...students, action.student]
+
         default: 
             return students
     }
