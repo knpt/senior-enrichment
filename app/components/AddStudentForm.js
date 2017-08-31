@@ -12,8 +12,12 @@ import { connect } from 'react-redux';
         
     }
 
+  
+
+    
 //   {newStudentEntry, handleSubmit, handleChange} = props
     render(){
+        const campus = this.props.campuses.name
       return(
         <div className = "container">
             <h3> ADD A NEW STUDENT </h3>
@@ -30,7 +34,7 @@ import { connect } from 'react-redux';
             <div>
             <label htmlFor="campus"> Campus:  
                 <select >
-                    <option value= "cauliflower"> CAULIFLOWER </option>
+                    <option value= "{campus}"> {campus} </option>
                 </select>
             </label>
             <input type="submit" value="Submit"/>

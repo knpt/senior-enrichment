@@ -15,9 +15,15 @@ class SingleStudent extends Component {
     render(){
         const currentStudent = this.props.currentStudent
         return (
-            <div>
+            <div className = "container">
                 <h4>
-                {currentStudent.name}
+                <div>
+                Name: {currentStudent.name}
+                </div>
+                <br/>
+                <div>
+                Email: {currentStudent.email}
+                </div>
                 </h4>
             </div>
         )

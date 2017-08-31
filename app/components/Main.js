@@ -1,5 +1,6 @@
 'use strict'
 import React, {Component } from 'react';
+import { connect } from 'react-redux';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import SingleCampus from './SingleCampus'
 import AllCampuses from './AllCampuses'
@@ -7,15 +8,13 @@ import AllStudents from './AllStudents'
 import SingleStudent from './SingleStudent'
 import Navbar from './Navbar'
 import AddStudentForm from './AddStudentForm'
+import Students from './Students'
+import { fetchStudents } from '../reducers/students'
 
 export default class Main extends Component {
   
-    componentDidMount(){
-
-    }
-
-
     render(){
+       
         return(
             <div>
                 <Navbar/>
@@ -32,10 +31,10 @@ export default class Main extends Component {
                 </Switch>
                 </main>
                 <div>
-                <AddStudentForm/>
                 </div>
             </div>
             
         )
     }
 }
+

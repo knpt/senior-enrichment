@@ -35,7 +35,7 @@ import axios from 'axios';
                 <h1><span id= "campusname" >{currentCampus.name} {currentCampus.id}</span></h1>
                 <img src = {currentCampus.image} width = {150} height = {150}/>
                 
-                <Students students = {filteredStudents}/>
+                <Students students = {filteredStudents} currentCampus = {currentCampus}/>
             </div>
         )
     }
