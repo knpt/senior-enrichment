@@ -10,6 +10,9 @@ import Navbar from './Navbar'
 import AddStudentForm from './AddStudentForm'
 import Students from './Students'
 import { fetchStudents } from '../reducers/students'
+import Home from './Home'
+import AddCampus from './AddCampus'
+
 
 export default class Main extends Component {
   
@@ -18,11 +21,11 @@ export default class Main extends Component {
         return(
             <div>
                 <Navbar/>
-                
                 <main>
                 <Switch>
         
                     {/* <Route exact path = "/campuses" component = {StatefulCampuses} /> */}
+                    <Route exact path ="/campuses/add" component = {AddCampus}/>
                     <Route path ="/campuses/:campusId" component = {SingleCampus} /> 
                     <Route path = "/campuses" component = {AllCampuses}/>
                     <Route exact path ="/students" component = {AllStudents}/>
@@ -32,6 +35,7 @@ export default class Main extends Component {
                 </main>
                 <div>
                 </div>
+                
             </div>
             
         )

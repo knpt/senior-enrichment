@@ -8,7 +8,8 @@ module.exports = db.define('campus', {
       allowNull: false
   },
   image: {
-      type: Sequelize.STRING, 
+      type: Sequelize.STRING,
+      defaultValue: "http://cdn77.sadanduseless.com/wp-content/uploads/2014/08/cat-burrito10.jpg"
   }
  
 })

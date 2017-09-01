@@ -12,6 +12,7 @@ function Navbar(props){
             <a href="/"> Home </a>
             <a href="/students"> Students </a>
             <a href="/campuses"> Campuses </a>
+            <a href="/campuses/add"> Add Campus </a>
         </div>
         <div className="main">
             <p>MANAGE YOUR CAMPUSES WITH THIS AWESOME NAVBAR</p>

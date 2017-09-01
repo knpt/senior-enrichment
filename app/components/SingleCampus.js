@@ -30,9 +30,9 @@ import axios from 'axios';
 
        console.log("IM THIS.PROPS" , this.props)
         return(
-            <div className = "container">
+            <div style = {{fontWeight: 'bold'}} className = "container">
                 
-                <h1><span id= "campusname" >{currentCampus.name} {currentCampus.id}</span></h1>
+                <h1><span id= "campusname" >{currentCampus.name} </span></h1>
                 <img src = {currentCampus.image} width = {150} height = {150}/>
                 
                 <Students students = {filteredStudents} currentCampus = {currentCampus}/>

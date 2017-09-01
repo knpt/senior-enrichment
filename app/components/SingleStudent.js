@@ -24,6 +24,7 @@ class SingleStudent extends Component {
                 <div>
                 Email: {currentStudent.email}
                 </div>
+                <br/>
                 </h4>
             </div>
         )

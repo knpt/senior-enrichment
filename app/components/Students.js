@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AddStudentForm from './AddStudentForm'
 
+
 const Students = function(props){
     const students = props.students;
     const currentCampus = props.currentCampus
@@ -33,8 +34,9 @@ const Students = function(props){
                                 {student.campusId} 
                         </td>
                          <td>
-                            <button className="btn btn-default btn-xs"> 
-                            <span className="glyphicon glyphicon-remove"></span>
+                             {/* (student.id)=>{handleClick(student.id)} */}
+                            <button value = {student.id} onClick = {handleClick} className="btn btn-default btn-xs"> 
+                            <span value = {student.id} className="glyphicon glyphicon-remove"></span>
                             </button>
                         </td>
                     </tr>
@@ -43,32 +45,18 @@ const Students = function(props){
             </tbody>
         </table>
         <div>
-            <AddStudentForm campuses = {currentCampus}/>
+             <AddStudentForm/> 
         </div>
         </div>
 
-        // <div className = "container">
-        //         <h3> STUDENTS </h3>
-        //         <ul>
-        //         {
-        //             students.map(student=> {
-        //                 return (
-        //                     <div key = {student.id}> 
-        //                     <li>
-        //                       <p>
-        //                       <Link className = "studentlink" to={`/students/${student.id}`}>
-        //                         <span> {student.name} | Campus ID: {student.campusId} </span>
-        //                       </Link> 
-        //                       </p>
-        //                     </li>
-        //                     </div>
-        //                 )
-        //             })
-        //         }
-        //         </ul>   
-        //     </div>
+
     )
 
+}
+
+
+function handleClick(event){
+   console.log(event.target.value)
 }
 
 export default Students

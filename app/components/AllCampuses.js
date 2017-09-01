@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {fetchCampuses} from '../reducers/campuses'; //thunk creator
-
+import AddCampus from './AddCampus'
 
 class AllCampuses extends Component {
 
@@ -36,6 +36,9 @@ class AllCampuses extends Component {
                     )
                 }) 
                 } 
+            <div>
+                <AddCampus/>
+            </div>
             </div> 
         )
     }

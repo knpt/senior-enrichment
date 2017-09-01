@@ -28,6 +28,17 @@ export function fetchStudents(){
     }
 }
 
+export function postStudentThunk(credentials){
+    return function thunk(dispatch){
+        return axios.post('/api/students', credentials)
+          .then(res=> res.data)
+          .then(student=> {
+              const action = postStudent(student)
+              dispatch(action)
+          })
+    }
+}
+
 
 //REDUCER
 

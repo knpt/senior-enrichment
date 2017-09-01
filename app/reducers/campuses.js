@@ -6,6 +6,7 @@ const GET_CAMPUS = "GET_CAMPUS";
 const CREATE_CAMPUS = "CREATE_CAMPUS";
 const REMOVE_CAMPUS = "REMOVE_CAMPUS";
 const UPDATE_CAMPUS = "UPDATE_CAMPUS";
+const POST_CAMPUS = "POST_CAMPUS"
 
 //ACTION CREATORS
 
@@ -16,8 +17,12 @@ export function getCampuses(campuses){
 
 export function getCampus(campus){
   const action = {type: GET_CAMPUS, campus};
-console.log("ACTION OBJECT!: ", action)
   return action;
+}
+
+export function postCampus(campus){
+    const action = {type: POST_CAMPUS, campus};
+    return action 
 }
 
 //add more action creators for create/remove/update campus
@@ -45,6 +50,17 @@ export function fetchCampus(){
     }
 }
 
+export function postCampusThunk(campusInfo){
+    return function thunk(dispatch){
+        return axios.post('/api/campuses', campusInfo)
+          .then(res=> res.data)
+          .then(campus=> {
+              const action = postCampus(campus)
+              dispatch(action)
+          })
+    }
+}
+
 //REDUCER
 
 export default function reducer (campuses= [], action){
@@ -54,6 +70,8 @@ export default function reducer (campuses= [], action){
         case GET_CAMPUSES:
             return action.campuses;
 
+        case POST_CAMPUS:
+            return [...campuses, action.campus]
         // case GET_CAMPUS:
         //     return [...campuses, action.campus];
 
